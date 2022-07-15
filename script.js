@@ -26,8 +26,14 @@ newGame.addEventListener("click", function() {
 diceRoll.addEventListener("click", function() {
     var numberDice = Math.floor(Math.random() * 6) + 1;
     showDice(numberDice);
-    updateCurrentScore += numberDice ;
-    currentScoreP1.innerHTML = updateCurrentScore;
+
+    if(numberDice !== 1) {
+        updateCurrentScore += numberDice ;
+        currentScoreP1.innerHTML = updateCurrentScore;
+    } else {
+        updateCurrentScore = zero;
+        currentScoreP1.innerHTML = updateCurrentScore;
+    }
 });
 
 hold.addEventListener("click", function() {
