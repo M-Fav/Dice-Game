@@ -10,7 +10,10 @@ let displayPlayer1 = document.getElementById("displayP1");
 let displayPlayer2 = document.getElementById("displayP2");
 let borderActiveP1 = document.getElementById("playerName1");
 let borderActiveP2 = document.getElementById("playerName2");
+let opponentScoreP1 = document.getElementById("opponentScoreP1");
+let opponentScoreP2 = document.getElementById("opponentScoreP2");
 let diceFace = document.querySelector(".dice");
+let x = window.matchMedia("(max-width: 768px)")
 let zero = 0;
 let updateCurrentScore = zero;
 let globalScoreP1 = zero;
@@ -18,6 +21,17 @@ let globalScoreP2 = zero;
 let player = 1;
 let player1;
 let player2;
+
+displayAdaptation();
+
+
+/**
+ * Redisposition des joueurs écran inférieur a 768px
+ */
+x.addEventListener("change", () => {
+    displayAdaptation();
+});
+
 
 
 //Bouton New Gme : Méthode edition des noms, initialisation d'une nouvelle partie.
@@ -108,15 +122,26 @@ function showDice(dice) {
 /**
  * Fonction changement de joueur 
  * Changement Background color pour player actif et encadré du nom du joueur actif.
+ * Affichage uniquement du joueur en cours en mobile.
  */
 function switchPlayer(nbPlayer) {
     if(player === 1) {
+        if(x.matches) {
+            displayPlayer2.style.setProperty('display', 'block');
+            displayPlayer1.style.setProperty('display', 'none');
+            document.getElementById("opponentScoreP" + player).innerHTML = globalScoreP1; 
+        }
         displayPlayer1.classList.remove("activePlayer");
         displayPlayer2.classList.add("activePlayer");
         borderActiveP1.classList.remove("activePlayerName");
         borderActiveP2.classList.add("activePlayerName");
         player = 2;
     } else {
+        if(x.matches) {
+            displayPlayer1.style.setProperty('display', 'block');
+            displayPlayer2.style.setProperty('display', 'none');
+            document.getElementById("opponentScoreP" + player).innerHTML = globalScoreP2;
+        }
         displayPlayer1.classList.add("activePlayer");
         displayPlayer2.classList.remove("activePlayer");
         borderActiveP1.classList.add("activePlayerName");
@@ -125,3 +150,24 @@ function switchPlayer(nbPlayer) {
     }
     hold.disabled = true;
 }
+
+//Fonction disposition des éléments en fonction de la taille écran ( 768px).
+function displayAdaptation() {
+    if(x.matches) {
+        opponentScoreP1.style.setProperty('display', 'block'); 
+        opponentScoreP2.style.setProperty('display', 'block');
+        if(player === 1) {
+            displayPlayer2.style.setProperty('display', 'none');
+        } else {
+            displayPlayer1.style.setProperty('display', 'none');
+        }
+    } else {
+        opponentScoreP1.style.setProperty('display', 'none'); 
+        opponentScoreP2.style.setProperty('display', 'none');
+        displayPlayer1.style.setProperty('display', 'block'); 
+        displayPlayer2.style.setProperty('display', 'block');
+    }
+}
+
+
+

@@ -1,3 +1,13 @@
+@media screen and (max-width: 768px) {
+    #displayP2 {
+        display: none;
+        width: 100%;
+    }
+    #displayP1 {
+        width: 100%;
+    }
+
+}
 
 * {
     margin: 0;
@@ -76,7 +86,7 @@ body {
 }
 
 .playerName {
-    font-size: 40px;
+    font-size: 3em;
     text-align: center;
     text-transform: uppercase;
     margin-top: 20px;
@@ -107,4 +117,5 @@ body {
     font-size: 15px;
     margin-bottom: 20px;
 }
+
 
