@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +14,7 @@ body {
 }
 
 .board {
-    display: table;
+    display: block;
     width: 70vw;
     position: absolute;
     top: 50%;
@@ -28,7 +29,7 @@ body {
     height: 110px;
     position: absolute;
     top: 40%;
-    left: 43.5%;
+    left: 45%;
     
 }
 
@@ -63,6 +64,15 @@ body {
     width: 50%;
     height: 75vh;
     padding: 100px;
+}
+
+.activePlayer {
+    background-color: #f4f4f4;
+}
+
+.activePlayerName {
+    border: solid #478978 2px;
+    border-radius: 25px;
 }
 
 .playerName {

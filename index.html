@@ -17,15 +17,15 @@
         </button>
         <img src="img/face-1.png" alt="dice" class="dice">
         <div class="row">
-            <div class="col-12 col-md-6 player1">
-                <div class="playerName" id="playerName1">Player 1</div>
+            <div class="col-12 col-md-6 player1 activePlayer" id="displayP1">
+                <div class="playerName activePlayerName" id="playerName1">Player 1</div>
                 <div class="playerScore" id="scoreP1">25</div>
                 <div class="scoreBox">
                     <span class="scoreBoxLabel">Cumul</span>
                     <div class="currentScore" id="currentScoreP1">12</div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 player2">
+            <div class="col-12 col-md-6 player2" id="displayP2">
                 <div class="playerName" id="playerName2">Player 2</div>
                 <div class="playerScore" id="scoreP2">56</div>
                 <div class="scoreBox">
@@ -39,7 +39,7 @@
             <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
           </svg>Roll
         </button>
-        <button class="holdButton btn btn-light" type="button" id="holdButton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-down" viewBox="0 0 16 16">
+        <button class="holdButton btn btn-light" type="button" id="holdButton" disabled="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-down" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
             <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
           </svg>Hold
