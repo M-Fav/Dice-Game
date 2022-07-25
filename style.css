@@ -1,13 +1,66 @@
 @media screen and (max-width: 768px) {
-    #displayP2 {
+   #displayP2 {
         display: none;
         width: 100%;
+        padding: 0%;
     }
-    #displayP1 {
+     #displayP1 {
         width: 100%;
+        padding: 0%;
     }
 
-}
+    .dice {
+        max-width: 60px;
+        max-height: 60px;
+        
+    }
+
+     .board {
+        width: auto;
+        top: auto;
+        position: initial;
+        left: auto;
+        transform: initial;
+    }
+
+    .opponentBox {
+        position: absolute;
+        top: 266px;
+        margin-left: 10px;
+        background-color:#8B95C9;
+        color: #d6edff;
+        width: 75px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .board > .newButton {
+        position: absolute;
+        left: 250px;
+        top: 276px;
+        height: 5vh;
+    }
+
+    .board > .rollButton {
+        position: absolute;
+        left: 250px;
+        height: 5vh;
+        bottom: 220px;
+    }
+
+    .board > .holdButton {
+        position: absolute;
+        left: 250px;
+        bottom: 180px;
+        height: 5vh;
+    }
+
+    .textButton {
+        display: none;
+    }
+}   
+
 
 * {
     margin: 0;
@@ -20,59 +73,54 @@
 body {
     background-image: linear-gradient(rgba(172, 215, 236, 0.4), rgba(71, 137, 120, 0.751));
     font-family: Lato;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .board {
     display: block;
-    width: 70vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
     background-color: #FFFFFF; 
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
-    transform: translate(-50%, -50%);
+    margin: 20px auto;
 }
 
 .dice {
     width: 110px;
     height: 110px;
-    position: absolute;
     top: 40%;
-    left: 45%;
+}
+
+.centered {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+
+.newButton {
+    text-align: center;
+    max-width: 10vw;
+    top: 5vh;
     
 }
 
-.newButton {
-    position: absolute;
-    text-align: center;
-    width: 12vw;
-    left: 40%;
-    top: 5vh;
-    font-size: 1.5em;
-}
-
 .rollButton {
-    position: absolute;
     text-align: center;
-    width: 12vw;
-    left: 40%;
-    bottom: 12vh;
-    font-size: 1.5em;
+    max-width: 10vw;
+    bottom: 200px;
+    
 }
 
 .holdButton {
-    position: absolute;
     text-align: center;
-    width: 12vw;
-    left: 40%;
-    bottom: 5vh;
-    font-size: 1.5em;
+    max-width: 10vw;
+    bottom: 150px; 
 }
 
 .player1, .player2 {
     width: 50%;
-    height: 75vh;
+    min-height: 75vh;
     padding: 100px;
 }
 
@@ -86,25 +134,24 @@ body {
 }
 
 .playerName {
-    font-size: 3em;
+    font-size: 30px;
     text-align: center;
     text-transform: uppercase;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    position: relative;
+    margin: 20px;
+    margin-bottom: 70px;
 }
 
 .playerScore {
     color: #478978 ;
     text-align: center;
     font-size: 4em;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     
 }
 .scoreBox {
     background-color:#8B95C9;
     color: #d6edff;
-    width: 40%;
+    width: 100px;
     margin: auto;
     padding: 15px;
     text-align: center;

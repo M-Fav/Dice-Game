@@ -154,6 +154,7 @@ function switchPlayer(nbPlayer) {
 //Fonction disposition des éléments en fonction de la taille écran ( 768px).
 function displayAdaptation() {
     if(x.matches) {
+        //ajout classe taille ecran petit
         opponentScoreP1.style.setProperty('display', 'block'); 
         opponentScoreP2.style.setProperty('display', 'block');
         if(player === 1) {
